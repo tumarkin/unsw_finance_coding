@@ -58,9 +58,9 @@ class PdeSlice:
             # Numerical derivatives to get C(S,t-delta t)
             gp_current = self.values[i]
             fx_back_continuation = gp_current.fx - self.delta_t * self.pde_dt(i)
-            fx_discrete_choice = self.discrete_choice_value(i)
+            fx_stopping = self.stopping_value(i)
 
-            fx_back = max(fx_back_continuation, fx_discrete_choice)
+            fx_back = max(fx_back_continuation, fx_stopping)
             
             gp_back = GridPoint(ix = i, x = gp_current.x, fx = fx_back)
             values_back.append(gp_back)

@@ -23,7 +23,7 @@ class BlackScholesCall(PdeSlice):
                self.dfdx(grid_index) * stock_price * (self.call_params.rf - self.call_params.dividend_yield) - \
                0.5 * self.d2fdx2(grid_index) * self.call_params.sigma ** 2 * stock_price ** 2
 
-    def discrete_choice_value(self, grid_index):
+    def stopping_value(self, grid_index):
         stock_price = self.values[grid_index].x
         return stock_price - self.call_params.strike        
         

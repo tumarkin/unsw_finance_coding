@@ -1,0 +1,5 @@
+[REFACTORING]
+no-else-return=no
+
+[MESSAGES CONTROL]
+disable=R1705
